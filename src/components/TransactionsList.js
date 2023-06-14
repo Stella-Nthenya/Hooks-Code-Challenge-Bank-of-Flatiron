@@ -20,7 +20,7 @@ function TransactionsList({ transactions }) {
           </th>
         </tr>
         {transactions.map((transaction) => (
-          <transaction key={transaction.id} transaction={transaction} />
+          <Transaction key={transaction.id} transaction={transaction} />
         ))}
       </tbody>
     </table>
