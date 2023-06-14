@@ -83,6 +83,27 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2023-06-15",
+      "description": "d",
+      "category": "d",
+      "amount": "098765",
+      "id": 13
+    },
+    {
+      "date": "2023-06-16",
+      "description": "Quickmatt",
+      "category": "shopping",
+      "amount": "-10000",
+      "id": 14
+    },
+    {
+      "date": "2023-06-16",
+      "description": "salary",
+      "category": "income",
+      "amount": "200000",
+      "id": 15
     }
   ]
 }

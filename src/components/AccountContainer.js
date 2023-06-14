@@ -11,7 +11,7 @@ function AccountContainer() {
     fetch("http://localhost:8001/transactions")
       .then((response) => response.json())
       .then((data) => {
-        console.log("fetched data", data)
+        console.log("fetched data", data);
         setTransactions(data);
         setFilteredTransactions(data); // Initialize filtered transactions with all transactions
       })
@@ -20,8 +20,8 @@ function AccountContainer() {
 
   // new transaction
   const addTransaction = (transaction) => {
-    // Make API call to post the new transaction
-    fetch("backend/api/transactions", {
+    // API call to post the new transaction
+    fetch("http://localhost:8001/transactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,10 +31,13 @@ function AccountContainer() {
       .then((response) => response.json())
       .then((data) => {
         // Update the transactions state with the response from the API
-        setTransactions([...transactions, data]);
+        setTransactions((prevTransactions) => [...prevTransactions, data]);
 
         // Update the filtered transactions with the new transaction included
-        setFilteredTransactions([...filteredTransactions, data]);
+        setFilteredTransactions((prevFilteredTransactions) => [
+          ...prevFilteredTransactions,
+          data,
+        ]);
       })
       .catch((error) =>
         console.error("Error adding transaction to the backend:", error)
