@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search(onSearch) {
+function Search({onSearch}) {
   const handleSearch = (e) => {
     const searchItem = e.target.value;
     onSearch(searchItem);
